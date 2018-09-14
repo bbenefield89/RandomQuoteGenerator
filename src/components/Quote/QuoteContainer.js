@@ -23,11 +23,11 @@ class QuoteContainer extends Component {
     
     axios(quoteURL)
       .then(({ data }) => {
-        const { quotes } = data
-        const dataLength = quotes.length;
-        const rand       = Math.floor(Math.random() * (dataLength - 1))
+        const { quotes }        = data
+        const dataLength        = quotes.length;
+        const rand              = Math.floor(Math.random() * (dataLength - 1))
         const { quote, author } = quotes[ rand ]
-        let { tweetURL } = this.state
+        let { tweetURL }        = this.state
 
         tweetURL += `"${ quote }" ${ author }`
 

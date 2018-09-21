@@ -1,15 +1,23 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
+
+const StyledAnchor = styled.a`
+  background: #50B1A7
+  border-radius: 3px;
+  color: #fdfdfd;
+  padding: 5px;
+`;
 
 const Anchor = props => {
   return (
-    <a
-      href={ props.tweetURL }
-      target={ props.targetATTR }
-      title={ props.title }
+    <StyledAnchor
+      href={props.tweetURL}
+      target={props.targetATTR}
+      title={props.title}
     >
-      { props.value }
-    </a>
+      {props.value}
+    </StyledAnchor>
   );
-}
- 
+};
+
 export default Anchor;

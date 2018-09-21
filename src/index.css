@@ -1,4 +1,9 @@
-body {
+#root {
+  background: #67b1a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: sans-serif;

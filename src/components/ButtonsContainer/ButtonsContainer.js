@@ -1,27 +1,48 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { func, shape, string } from 'prop-types'
+
+import { getQuoteContent } from '../../actions'
 
 import Anchor from '../misc/Anchor'
 import Button from '../misc/Button'
 
-const ButtonsContainer = props => {
-  return (
+class ButtonsContainer extends Component {
+  componentDidMount() {
+    this.props.getQuoteContent()
+  }
+  
+  render() {
+    const { getQuoteContent, tweetURL } = this.props
     
-    <React.Fragment>
-      <Anchor
-        targetATTR="_blank"
-        title="Tweet this quote!"
-        tweetURL={ props.tweetURL }
-        value="Tweet This"
-      />
-    
-      <Button
-        title="Generate a new quote"
-        value="New quote"
-        getRandomQuote={ props.getRandomQuote }
-      />
-    </React.Fragment>
-  );
+    return (
+      <React.Fragment>
+        <Anchor
+          target='_blank'
+          title='Tweet this'
+          tweetURL={ tweetURL }
+        />
+      
+        <Button
+          getQuoteContent={ getQuoteContent }
+          title='Generate a new quote'
+          value='Get new quote'
+        />
+      </React.Fragment>
+    );
+  }
 }
- 
-export default ButtonsContainer;
+
+ButtonsContainer.propTypes = {
+  getQuoteContent: func.isRequired,
+  quoteContent: shape({
+    tweetURL: string.isRequired
+  }),
+}
+
+const mapStateToProps = state => {
+  const { tweetURL } = state.quoteContent
+  return { tweetURL }
+}
+
+export default  connect(mapStateToProps, { getQuoteContent })(ButtonsContainer)

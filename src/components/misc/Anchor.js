@@ -1,4 +1,5 @@
 import React from "react";
+import { string } from 'prop-types'
 import styled from "styled-components";
 
 const StyledAnchor = styled.a`
@@ -9,15 +10,23 @@ const StyledAnchor = styled.a`
 `;
 
 const Anchor = props => {
+  const { target, title, tweetURL } = props
+  
   return (
     <StyledAnchor
-      href={props.tweetURL}
-      target={props.targetATTR}
-      title={props.title}
+      href={ tweetURL }
+      target={ target }
+      title={ title }
     >
-      {props.value}
+      Tweet this
     </StyledAnchor>
-  );
-};
+  )
+}
 
-export default Anchor;
+Anchor.propTypes = {
+  target: string.isRequired,
+  title: string.isRequired,
+  tweetURL: string.isRequired
+}
+
+export default Anchor

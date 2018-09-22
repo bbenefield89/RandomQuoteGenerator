@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import QuoteContainer from "./components/Quote/QuoteContainer";
+import QuoteContainer from "./components/Quote/QuoteContainer"
 
 class App extends Component {
   render() {
-    return <QuoteContainer />;
+    return <QuoteContainer />
   }
 }
 
-export default App;
+export default App

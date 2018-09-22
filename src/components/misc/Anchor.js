@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import styled from "styled-components";
 
@@ -26,10 +25,4 @@ Anchor.propTypes = {
   tweetURL: PropTypes.string.isRequired
 }
 
-const mapStateToProps = state => {
-  const { tweetURL } = state.quoteContent
-  
-  return { tweetURL }
-}
-
-export default connect(mapStateToProps)(Anchor)
+export default Anchor

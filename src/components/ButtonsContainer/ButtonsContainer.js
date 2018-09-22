@@ -13,16 +13,18 @@ class ButtonsContainer extends Component {
   }
   
   render() {
+    const { getQuoteContent, tweetURL } = this.props
+    
     return (
       <React.Fragment>
         <Anchor
-          tweetURL={ this.props.quoteContent.tweetURL }
+          tweetURL={ tweetURL }
         />
       
         <Button
-          title="Generate a new quote"
-          value="Get new quote"
-          getQuoteContent={ this.props.getQuoteContent }
+          title='Generate a new quote'
+          value='Get new quote'
+          getQuoteContent={ getQuoteContent }
         />
       </React.Fragment>
     );
@@ -37,7 +39,8 @@ ButtonsContainer.propTypes = {
 }
 
 const mapStateToProps = state => {
-  return state
+  const { tweetURL } = state.quoteContent
+  return { tweetURL }
 }
 
 export default  connect(mapStateToProps, { getQuoteContent })(ButtonsContainer)

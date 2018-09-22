@@ -11,7 +11,6 @@ const StyledAnchor = styled.a`
 `;
 
 const Anchor = props => {
-  console.log(props)
   return (
     <StyledAnchor
       href={ props.tweetURL }
@@ -21,6 +20,10 @@ const Anchor = props => {
       Tweet this
     </StyledAnchor>
   )
+}
+
+Anchor.propTypes = {
+  tweetURL: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state => {

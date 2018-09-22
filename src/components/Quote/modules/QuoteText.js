@@ -18,11 +18,12 @@ const QuoteText = props => {
   return (
     <React.Fragment>
       <QuoteBody>
-        <Quotation>"</Quotation>
         {props.quote.quote}
       </QuoteBody>
 
-      <QuoteAuthor>- {props.quote.author}</QuoteAuthor>
+      <QuoteAuthor>
+        - {props.quote.author}
+      </QuoteAuthor>
     </React.Fragment>
   );
 };

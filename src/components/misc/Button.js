@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from 'prop-types'
-import styled from "styled-components";
+import React from 'react';
+import { func, string } from 'prop-types'
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
   background: #50B1A7
@@ -11,22 +11,22 @@ const StyledButton = styled.button`
 `;
 
 const Button = props => {
+  const { getQuoteContent, title, value } = props
+  
   return (
-    <React.Fragment>
-      <StyledButton
-        title={ props.title }
-        onClick={ props.getQuoteContent }
-      >
-        { props.value }
-      </StyledButton>
-    </React.Fragment>
+    <StyledButton
+      title={ title }
+      onClick={ getQuoteContent }
+    >
+      { value }
+    </StyledButton>
   );
 };
 
 Button.propTypes = {
-  getQuoteContent: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
+  getQuoteContent: func.isRequired,
+  title: string.isRequired,
+  value: string.isRequired
 }
 
 export default Button;

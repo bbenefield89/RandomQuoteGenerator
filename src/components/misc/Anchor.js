@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import styled from "styled-components";
 
 const StyledAnchor = styled.a`
@@ -9,6 +11,7 @@ const StyledAnchor = styled.a`
 `;
 
 const Anchor = props => {
+  console.log(props)
   return (
     <StyledAnchor
       href={ props.tweetURL }
@@ -20,4 +23,10 @@ const Anchor = props => {
   )
 }
 
-export default Anchor
+const mapStateToProps = state => {
+  const { tweetURL } = state.quoteContent
+  
+  return { tweetURL }
+}
+
+export default connect(mapStateToProps)(Anchor)

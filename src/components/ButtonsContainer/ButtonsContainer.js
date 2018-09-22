@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import { func, shape, string } from 'prop-types'
 
 import { getQuoteContent } from '../../actions'
 
@@ -18,13 +18,15 @@ class ButtonsContainer extends Component {
     return (
       <React.Fragment>
         <Anchor
+          target='_blank'
+          title='Tweet this'
           tweetURL={ tweetURL }
         />
       
         <Button
+          getQuoteContent={ getQuoteContent }
           title='Generate a new quote'
           value='Get new quote'
-          getQuoteContent={ getQuoteContent }
         />
       </React.Fragment>
     );
@@ -32,9 +34,9 @@ class ButtonsContainer extends Component {
 }
 
 ButtonsContainer.propTypes = {
-  getQuoteContent: PropTypes.func.isRequired,
-  quoteContent: PropTypes.shape({
-    tweetURL: PropTypes.string
+  getQuoteContent: func.isRequired,
+  quoteContent: shape({
+    tweetURL: string.isRequired
   }),
 }
 

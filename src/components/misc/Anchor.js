@@ -11,13 +11,13 @@ const StyledAnchor = styled.a`
 const Anchor = props => {
   return (
     <StyledAnchor
-      href={props.tweetURL}
-      target={props.targetATTR}
-      title={props.title}
+      href={ props.tweetURL }
+      target='_blank'
+      title='Tweet this'
     >
-      {props.value}
+      Tweet this
     </StyledAnchor>
-  );
-};
+  )
+}
 
-export default Anchor;
+export default Anchor

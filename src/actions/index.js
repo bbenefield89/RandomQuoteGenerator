@@ -9,10 +9,19 @@ export const getQuoteContent = () => {
     
     axios(quotesURL)
       .then(({ data }) => {
-        console.log('getQuoteContent: ', data.quotes)
+        const { quotes }        = data
+        const quotesLength      = quotes.length;
+        const rand              = Math.floor(Math.random() * (quotesLength))
+        const { quote, author } = quotes[ rand ]
+        let tweetURL            = 'https://twitter.com/intent/tweet?hashtags=quotes&text='
+
+        tweetURL += `"${quote}" ${author}`;
+
+        const payload = { tweetURL, quote, author }
+        
         dispatch({
-          type: GET_QUOTE_CONTENT,
-          payload: data.quotes
+          payload,
+          type: GET_QUOTE_CONTENT
         })
       })
       .catch(err => {

@@ -12,8 +12,11 @@ const StyledButton = styled.button`
 const Button = props => {
   return (
     <React.Fragment>
-      <StyledButton title={props.title} onClick={props.getRandomQuote}>
-        {props.value}
+      <StyledButton
+        title={ props.title }
+        onClick={ props.getQuoteContent }
+      >
+        { props.value }
       </StyledButton>
     </React.Fragment>
   );

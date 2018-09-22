@@ -54,26 +54,19 @@ class QuoteContainer extends Component {
       .catch(err => console.log(err));
   };
 
-  // componentDidMount
-  componentDidMount() {
-    this.getRandomQuote();
-  }
-
   // render
   render() {
     return (
       <StyledContainer className="quote-container">
         <Row>
           <Col>
-            <QuoteText quote={this.state.quoteContent} />
+            <QuoteText />
           </Col>
         </Row>
 
         <Row>
           <Col>
-            <ButtonsContainer
-              // TODO: SEND DOWN VALUES FOR baseURL, tweetURL, and quoteContent
-            />
+            <ButtonsContainer />
           </Col>
         </Row>
       </StyledContainer>

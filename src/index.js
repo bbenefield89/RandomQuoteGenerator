@@ -6,12 +6,12 @@ import { Provider } from 'react-redux'
 
 import App from "./App";
 
-import { getQuoteContent } from './reducers'
+import { reducers } from './reducers'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
-const store = createStore(getQuoteContent, applyMiddleware(thunk))
+const store = createStore(reducers, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={ store }>

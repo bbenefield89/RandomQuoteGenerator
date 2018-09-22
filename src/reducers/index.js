@@ -1,16 +1,33 @@
-import { GET_QUOTE_CONTENT } from '../actions'
+import { combineReducers } from 'redux'
+
+import {
+  GET_QUOTE_CONTENT
+} from '../actions'
 
 const initialState = {
   gettingQuotes: true,
-  quotes: []
+  quoteData: {},
+  tweetURL: ''
 }
 
 export const getQuoteContent = (state=initialState, action) => {
   switch (action.type) {
     case GET_QUOTE_CONTENT:
-      console.log('\n\nGET_QUOTE_CONTENT REDUCER CALLED\n\n')
+      const { author, quote, tweetURL } = action.payload
+
+      state = {
+        tweetURL,
+        gettingQuotes: false,
+        quoteData: { author, quote }
+      }
+
+      return state
 
     default:
       return state
   }
 }
+
+export const reducers = combineReducers({
+  quoteContent: getQuoteContent
+})

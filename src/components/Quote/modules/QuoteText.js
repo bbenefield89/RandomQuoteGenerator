@@ -3,16 +3,12 @@ import { bool, string } from 'prop-types'
 import styled from "styled-components";
 import { connect } from 'react-redux'
 
-const QuoteBody = styled.p``;
+const QuoteBody = styled.p`
+  font-size: 2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+`
 
-// const Quotation = styled.span`
-//   font-size: 50px;
-//   margin-right: 20px;
-//   position: relative;
-//   top: 20px;
-// `
-
-const QuoteAuthor = styled(QuoteBody)`
+const QuoteAuthor = styled.p`
   text-align: right;
 `
 

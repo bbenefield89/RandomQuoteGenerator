@@ -15,6 +15,11 @@ const StyledContainer = styled(Container)`
   max-width: 600px !important;
 `
 
+const ButtonsContainerCol = styled(Col)`
+  display: flex;
+  justify-content: space-between;
+`
+
 const QuoteContainer = () => {
   return (
     <StyledContainer className="quote-container">
@@ -25,9 +30,9 @@ const QuoteContainer = () => {
       </Row>
 
       <Row>
-        <Col>
+        <ButtonsContainerCol>
           <ButtonsContainer />
-        </Col>
+        </ButtonsContainerCol>
       </Row>
     </StyledContainer>
   )

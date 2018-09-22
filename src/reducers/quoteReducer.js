@@ -4,7 +4,7 @@ import {
 
 const initialState = {
   gettingQuotes: true,
-  quoteData: {},
+  quoteData: { author: '', quote: '' },
   tweetURL: ''
 }
 

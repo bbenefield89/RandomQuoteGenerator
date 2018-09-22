@@ -1,4 +1,5 @@
 import React from "react";
+import { bool, string } from 'prop-types'
 import styled from "styled-components";
 import { connect } from 'react-redux'
 
@@ -16,8 +17,7 @@ const QuoteAuthor = styled(QuoteBody)`
 `
 
 const QuoteText = props => {
-  const { gettingQuotes } = props.quoteContent
-  const { quote, author } = props.quoteContent.quoteData
+  const { author, gettingQuotes, quote } = props
   
   return (
     gettingQuotes
@@ -36,8 +36,18 @@ const QuoteText = props => {
   )
 }
 
+QuoteText.propTypes = {
+  author: string,
+  gettingQuotes: bool,
+  quote: string
+}
+
 const mapStateToProps = state => {
-  return state
+  const { quoteContent } = state
+  const { gettingQuotes, quoteData } = quoteContent
+  const { author, quote } = quoteData
+
+  return { gettingQuotes, author, quote }
 }
 
 export default connect(mapStateToProps)(QuoteText)

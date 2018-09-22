@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { getQuoteContent } from '../../actions'
 
@@ -12,7 +13,6 @@ class ButtonsContainer extends Component {
   }
   
   render() {
-    console.log(this.props.quoteContent)
     return (
       <React.Fragment>
         <Anchor
@@ -28,7 +28,14 @@ class ButtonsContainer extends Component {
     );
   }
 }
- 
+
+ButtonsContainer.propTypes = {
+  getQuoteContent: PropTypes.func.isRequired,
+  quoteContent: PropTypes.shape({
+    tweetURL: PropTypes.string
+  }),
+}
+
 const mapStateToProps = state => {
   return state
 }

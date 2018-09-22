@@ -16,16 +16,23 @@ const QuoteAuthor = styled(QuoteBody)`
 `
 
 const QuoteText = props => {
+  const { gettingQuotes } = props.quoteContent
+  const { quote, author } = props.quoteContent.quoteData
+  
   return (
-    <React.Fragment>
-      <QuoteBody>
-        QB
-      </QuoteBody>
+    gettingQuotes
+    ?
+      <p>Retrieving quotes...</p>
+    :
+      <React.Fragment>
+        <QuoteBody>
+          { quote }
+        </QuoteBody>
 
-      <QuoteAuthor>
-        - QA
-      </QuoteAuthor>
-    </React.Fragment>
+        <QuoteAuthor>
+          - { author }
+        </QuoteAuthor>
+      </React.Fragment>
   )
 }
 
@@ -33,4 +40,4 @@ const mapStateToProps = state => {
   return state
 }
 
-export default QuoteText
+export default connect(mapStateToProps)(QuoteText)

@@ -10,13 +10,13 @@ const StyledAnchor = styled.a`
 `;
 
 const Anchor = props => {
-  const { tweetURL } = props
+  const { target, title, tweetURL } = props
   
   return (
     <StyledAnchor
       href={ tweetURL }
-      target='_blank'
-      title='Tweet this'
+      target={ target }
+      title={ title }
     >
       Tweet this
     </StyledAnchor>
@@ -24,6 +24,8 @@ const Anchor = props => {
 }
 
 Anchor.propTypes = {
+  target: string.isRequired,
+  title: string.isRequired,
   tweetURL: string.isRequired
 }
 

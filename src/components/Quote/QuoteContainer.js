@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap"
 import styled from "styled-components"
 
 import ButtonsContainer from '../ButtonsContainer/ButtonsContainer'
-import QuoteText from "./modules/QuoteText"
+import QuoteInformationContainer from "./modules/QuoteInformationContainer"
 
 const StyledContainer = styled(Container)`
   background: #fdfdfd;
@@ -25,7 +25,7 @@ const QuoteContainer = () => {
     <StyledContainer className="quote-container">
       <Row>
         <Col>
-          <QuoteText />
+          <QuoteInformationContainer />
         </Col>
       </Row>
 

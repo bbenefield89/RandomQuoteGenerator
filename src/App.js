@@ -4,6 +4,7 @@ import GitHubCorner from 'react-github-corner'
 
 import QuoteContainer from "./components/Quote/QuoteContainer"
 import MadeWithLove from "./components/MadeWithLove/MadeWithLove";
+import Stripe from "./components/Stripe/Stripe";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <GitHubCorner href='https://github.com/bbenefield89/RandomQuoteGenerator' />
         <QuoteContainer />
         <MadeWithLove />
+        <Stripe />
       </React.Fragment>
     )
   }

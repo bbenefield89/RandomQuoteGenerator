@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { string } from 'prop-types'
 import { Spring } from 'react-spring'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
@@ -28,6 +28,10 @@ const QuoteAuthor = props => {
   )
 }
  
+QuoteAuthor.propTypes = {
+  author: string.isRequired
+}
+
 const mapStateToProps = state => {
   const { author } = state.quoteContent.quoteData
   return { author }

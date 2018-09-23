@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import { string } from 'prop-types'
+import { connect } from 'react-redux'
 import { Spring } from 'react-spring'
 import styled from 'styled-components'
 
@@ -27,5 +28,14 @@ const QuoteBody = props => {
     </Spring>
   );
 }
- 
-export default QuoteBody;
+
+QuoteBody.propTypes = {
+  quote: string.isRequired
+}
+
+const mapStateToProps = state => {
+  const { quote } = state.quoteContent.quoteData
+  return { quote }
+}
+
+export default connect(mapStateToProps)(QuoteBody)

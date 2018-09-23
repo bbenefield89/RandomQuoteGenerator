@@ -11,6 +11,7 @@ const StyledContainer = styled(Container)`
   box-shadow: 0 2px 4px hsl(173,32%,36%);
   margin-left: 1rem !important;
   margin-right: 1rem !important;
+  margin-bottom: 2rem !important
   padding: 20px;
   max-width: 600px !important;
 `

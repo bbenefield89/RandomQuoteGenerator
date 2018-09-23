@@ -7,4 +7,4 @@
 <hr>
 
 # [See it in action](https://bb-rqg.netlify.com/)
-# [Play with the code](https://codesandbox.io/s/jj2zzonl85)
+# [Play with the code](https://codesandbox.io/s/github/bbenefield89/RandomQuoteGenerator)

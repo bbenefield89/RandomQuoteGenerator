@@ -10,6 +10,7 @@
     "bootstrap": "4.1.3",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-github-corner": "^2.3.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
     "react-spring": "^5.8.0",

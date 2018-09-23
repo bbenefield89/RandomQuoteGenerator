@@ -8,7 +8,7 @@ import QuoteText from "./modules/QuoteText"
 const StyledContainer = styled(Container)`
   background: #fdfdfd;
   border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px hsl(173,32%,36%);
   margin-left: 1rem !important;
   margin-right: 1rem !important;
   padding: 20px;

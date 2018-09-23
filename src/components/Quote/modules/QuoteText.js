@@ -1,16 +1,10 @@
 import React from "react";
 import { bool, string } from 'prop-types'
-import styled from "styled-components";
 import { connect } from 'react-redux'
-
-const QuoteBody = styled.p`
-  font-size: 2rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-`
-
-const QuoteAuthor = styled.p`
-  text-align: right;
-`
+import { Spring } from 'react-spring'
+import styled from "styled-components";
+import QuoteBody from "./QuoteBody";
+import QuoteAuthor from "./QuoteAuthor";
 
 const QuoteText = props => {
   const { author, gettingQuotes, quote } = props
@@ -21,13 +15,8 @@ const QuoteText = props => {
       <p>Retrieving quotes...</p>
     :
       <React.Fragment>
-        <QuoteBody>
-          { quote }
-        </QuoteBody>
-
-        <QuoteAuthor>
-          - { author }
-        </QuoteAuthor>
+        <QuoteBody quote={ quote } />
+        <QuoteAuthor author={ author } />
       </React.Fragment>
   )
 }

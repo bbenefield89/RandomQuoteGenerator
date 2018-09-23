@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "8.11"
+  },
   "name": "random_quote_machine",
   "version": "0.1.0",
   "private": true,

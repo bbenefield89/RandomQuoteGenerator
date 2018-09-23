@@ -16,7 +16,7 @@ const QuoteText = props => {
     :
       <React.Fragment>
         <QuoteBody quote={ quote } />
-        <QuoteAuthor author={ author } />
+        <QuoteAuthor />
       </React.Fragment>
   )
 }

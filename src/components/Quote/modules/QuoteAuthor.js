@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Spring } from 'react-spring'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 const StyledQuoteAuthor = styled.p`
@@ -27,4 +28,9 @@ const QuoteAuthor = props => {
   )
 }
  
-export default QuoteAuthor
+const mapStateToProps = state => {
+  const { author } = state.quoteContent.quoteData
+  return { author }
+}
+
+export default connect(mapStateToProps)(QuoteAuthor)
